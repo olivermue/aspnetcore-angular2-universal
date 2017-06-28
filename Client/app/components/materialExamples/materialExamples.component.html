@@ -1,0 +1,115 @@
+﻿<h1>Material design</h1>
+<md-card>
+    <md-card-content>
+        <section>
+            <h4>Simple buttons</h4>
+            <button md-button>Flat button</button>
+            <button md-raised-button>Raised button</button>
+        </section>
+        <section>
+            <h4>Fab buttons</h4>
+            <button md-fab color="primary"><md-icon>check</md-icon></button>
+            <button md-fab color="accent"><md-icon>build</md-icon></button>
+            <button md-mini-fab color="warn"><md-icon>gavel</md-icon></button>
+        </section>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-content>
+        <section *ngIf="isBrowser">
+            <h4>Checkbox</h4>
+            <md-checkbox>Check me</md-checkbox>
+        </section>
+        <section>
+            <h4>Radio buttons</h4>
+            <md-radio-group>
+                <md-radio-button color="primary" value="1">First</md-radio-button>
+                <md-radio-button color="accent" value="2">Second</md-radio-button>
+                <md-radio-button color="warn" value="3">Third</md-radio-button>
+            </md-radio-group>
+        </section>
+        <section>
+            <h4>Slider buttons</h4>
+            <md-slide-toggle color="primary">Slide me</md-slide-toggle>
+            <md-slide-toggle color="accent">Slide me</md-slide-toggle>
+            <md-slide-toggle color="warn">Slide me</md-slide-toggle>
+        </section>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-content>
+        <section>
+            <h4>Inputs</h4>
+            <md-input-container>
+                <input mdInput placeholder="Please enter something" />
+            </md-input-container>
+        </section>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-content>
+      <section>
+        <md-select *ngIf="isBrowser" placeholder="Favorite food" name="food">
+          <md-option value="Steak">Steak</md-option>
+          <md-option value="Pizza">Pizza</md-option>
+          <md-option value="Tacos">Tacos</md-option>
+        </md-select>
+      </section>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-content>
+        <section>
+            <h4>Slider</h4>
+            <md-slider max="100" min="0" value="30">
+            </md-slider>
+        </section>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-content>
+        <section>
+            <h4>Chips</h4>
+            <md-chip-list>
+                <md-chip color="primary" selected="true">Primary selected</md-chip>
+                <md-chip color="accent" selected="true">Accent selected</md-chip>
+                <md-chip>Not selected</md-chip>
+                <md-chip color="primary">Not selected primary</md-chip>
+            </md-chip-list>
+        </section>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-content>
+        <section>
+            <h4>Spinner determinate</h4>
+            <md-progress-spinner color="primary" value="75">
+            </md-progress-spinner>
+        </section>
+        <section>
+            <h4>Spinner indeterminate</h4>
+            <md-progress-spinner color="accent" mode="indeterminate">
+            </md-progress-spinner>
+        </section>
+    </md-card-content>
+</md-card>
+<md-card>
+    <md-card-content>
+        <section>
+            <h4>Indeterminate</h4>
+            <md-progress-bar mode="indeterminate"></md-progress-bar>
+        </section>
+        <section>
+            <h4>Query</h4>
+            <md-progress-bar mode="query"></md-progress-bar>
+        </section>
+        <section>
+            <h4>Simple</h4>
+            <md-progress-bar value="60"></md-progress-bar>
+        </section>
+        <section>
+            <h4>Buffer</h4>
+            <md-progress-bar value="35" bufferValue="60" mode="buffer"></md-progress-bar>
+        </section>
+    </md-card-content>
+</md-card>

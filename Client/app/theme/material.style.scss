@@ -1,0 +1,99 @@
+﻿@import '~@angular/material/theming';
+@import "~material-design-icons/iconfont/material-icons.css";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$mnspro-blue: (
+  50: #b3c8ef,
+  100: #9bb4e4,
+  200: #82a0d8,
+  300: #6789cd,
+  400: #5f89dd,
+  500: #3a60aa,
+  600: #28529b,
+  700: #19408b,
+  800: #113577,
+  900: #0d2c6a,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+  )
+);
+
+$mnspro-accent: (
+  50: #ffebee,
+  100: #ffe0a4,
+  200: #ffd68c,
+  300: #ffcf73,
+  400: #ffc55b,
+  500: #ffbf44,
+  600: #e5a42b,
+  700: #d18f13,
+  800: #b57a0c,
+  900: #9e6904,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: white,
+    900: white,
+  )
+);
+
+$mnspro-warn: (
+  50: #fcbdc1,
+  100: #fea3a8,
+  200: #fc8a92,
+  300: #fc7178,
+  400: #f95964,
+  500: #fb434c,
+  600: #e22832,
+  700: #cd131c,
+  800: #b20a13,
+  900: #9c040c,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: white,
+    900: white,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$mnspro-app-primary: mat-palette($mnspro-blue);
+$mnspro-app-accent:  mat-palette($mnspro-accent);
+
+// The warn palette is optional (defaults to red).
+$mnspro-app-warn:    mat-palette($mnspro-warn);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$mnspro-app-theme: mat-light-theme($mnspro-app-primary, $mnspro-app-accent, $mnspro-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($mnspro-app-theme);
