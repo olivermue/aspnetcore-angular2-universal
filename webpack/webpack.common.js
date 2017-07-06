@@ -1,4 +1,5 @@
 ﻿const { root } = require('./helpers');
+const webpack = require('webpack');
 
 /**
  * This is a common webpack config which is the base for all builds
@@ -21,5 +22,7 @@ module.exports = {
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url-loader?limit=10000' }
     ]
   },
-  plugins: []
+  plugins: [
+    new webpack.DefinePlugin({ "global.GENTLY": false })
+  ]
 };

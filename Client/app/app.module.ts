@@ -4,6 +4,9 @@ import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import { HttpModule, Http } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
+import { AdalService } from 'ng2-adal/core';
+import { SecretService } from './shared/secret.service';
+
 import { Ng2BootstrapModule } from 'ngx-bootstrap';
 import { MaterialModule } from './theme/material.module';
 
@@ -21,6 +24,7 @@ import { ChatComponent } from './containers/chat/chat.component';
 import { NotFoundComponent } from './containers/not-found/not-found.component';
 import { NgxBootstrapComponent } from './containers/ngx-bootstrap-demo/ngx-bootstrap.component';
 import { MaterialExamplesComponent } from './components/materialExamples/materialExamples.component';
+import { MicrosoftGraphComponent } from './components/microsoft-graph/microsoft-graph.component';
 
 import { LinkService } from './shared/link.service';
 import { UserService } from './shared/user.service';
@@ -30,7 +34,7 @@ import { TransferHttpModule } from '../modules/transfer-http/transfer-http.modul
 
 export function createTranslateLoader(http: Http, baseHref) {
   // Temporary Azure hack
-  if (baseHref === null && typeof window !== 'undefined') {
+  if (baseHref === undefined && typeof window !== 'undefined') {
     baseHref = window.location.origin;
   }
   // i18n files are in `wwwroot/assets/`
@@ -48,7 +52,8 @@ export function createTranslateLoader(http: Http, baseHref) {
     ChatComponent,
     NotFoundComponent,
     NgxBootstrapComponent,
-    MaterialExamplesComponent
+    MaterialExamplesComponent,
+    MicrosoftGraphComponent
   ],
   imports: [
     CommonModule,
@@ -139,6 +144,7 @@ export function createTranslateLoader(http: Http, baseHref) {
         }
       },
       { path: 'materialExamples', component: MaterialExamplesComponent },
+      { path: 'microsoft-graph', component: MicrosoftGraphComponent },
       { path: 'lazy', loadChildren: './containers/+lazy/lazy.module#LazyModule' },
 
       {
@@ -158,7 +164,9 @@ export function createTranslateLoader(http: Http, baseHref) {
     LinkService,
     UserService,
     ConnectionResolver,
-    TranslateModule
+    TranslateModule,
+    AdalService,
+    SecretService
   ]
 })
 export class AppModule {
